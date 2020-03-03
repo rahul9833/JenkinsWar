@@ -8,10 +8,11 @@ node{
    }
    stage('Compile-Package-create-war-file'){
       // Get maven home path
-      def mvnHome =  tool name: 'maven', type: 'maven' 
+      def mvnHome =  tool name: 'maven-3', type: 'maven' 
       bat "${mvnHome}/bin/mvn package"
       }
-/*   stage ('Stop Tomcat Server') {
+
+  /*   stage ('Stop Tomcat Server') {
                bat ''' @ECHO OFF
                wmic process list brief | find /i "tomcat" > NUL
                IF ERRORLEVEL 1 (
